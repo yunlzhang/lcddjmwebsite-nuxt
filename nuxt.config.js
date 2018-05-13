@@ -7,7 +7,6 @@ const {
 
 module.exports = {
     mode: 'universal',
-    loading:false,
     //generate
     generate: {
         routes: function () {
@@ -51,11 +50,12 @@ module.exports = {
     loading: {
         color: '#FFFFFF'
     },
-
+    // loading:false,
     /*
      ** Global CSS
      */
     css: [
+        '~assets/css/main.css',
         '@/static/scss/normalize.scss',
         'element-ui/lib/theme-chalk/index.css'
     ],

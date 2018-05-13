@@ -72,10 +72,6 @@ module.exports =
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-var _module$exports;
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 var pkg = __webpack_require__(4);
 var axios = __webpack_require__(5);
 
@@ -85,9 +81,8 @@ var _require = __webpack_require__(8),
 var _require2 = __webpack_require__(7),
     VueLoaderPlugin = _require2.VueLoaderPlugin;
 
-module.exports = (_module$exports = {
+module.exports = {
     mode: 'universal',
-    loading: false,
     //generate
     generate: {
         routes: function routes() {
@@ -119,81 +114,110 @@ module.exports = (_module$exports = {
             type: 'image/x-icon',
             href: '/favicon.ico'
         }]
-    }
-
-}, _defineProperty(_module$exports, 'loading', {
-    color: '#FFFFFF'
-}), _defineProperty(_module$exports, 'css', ['@/static/scss/normalize.scss', 'element-ui/lib/theme-chalk/index.css']), _defineProperty(_module$exports, 'plugins', ['~/plugins/element-ui', {
-    src: '~/plugins/extra',
-    ssr: false
-}, {
-    src: '~/plugins/cropper',
-    ssr: false
-}, {
-    src: '~/plugins/global',
-    ssr: false
-}]), _defineProperty(_module$exports, 'modules', [
-// Doc: https://github.com/nuxt-community/axios-module#usage
-'@nuxtjs/axios']), _defineProperty(_module$exports, 'axios', {
-    // See https://github.com/nuxt-community/axios-module#options
-    credentials: true
-}), _defineProperty(_module$exports, 'build', {
-    /*
-     ** You can extend webpack config here
-     */
-    vendor: ['axios', '~/plugins/element-ui', '~/plugins/extra.js'],
-    extractCSS: true,
-    babel: {
-        "presets": ["env", 'vue-app']
     },
-    // extend(config, ctx) {
-    //     // Run ESLint on save
-    //     if (ctx.isDev && ctx.isClient) {
-    //         config.module.rules.push({
-    //             enforce: 'pre',
-    //             test: /\.(js|vue)$/,
-    //             loader: 'eslint-loader',
-    //             exclude: /(node_modules)/
-    //         })
-    //     }
-    // },
-    loaders: [{
-        test: /\.vue$/,
-        loader: 'vue-loader'
+
+    /*
+     ** Customize the progress-bar color
+     */
+    loading: {
+        color: '#FFFFFF'
+    },
+    // loading:false,
+    /*
+     ** Global CSS
+     */
+    css: ['~assets/css/main.css', '@/static/scss/normalize.scss', 'element-ui/lib/theme-chalk/index.css'],
+
+    /*
+     ** Plugins to load before mounting the App
+     */
+    plugins: ['~/plugins/element-ui', {
+        src: '~/plugins/extra',
+        ssr: false
     }, {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: 'babel-loader'
+        src: '~/plugins/cropper',
+        ssr: false
     }, {
-        test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
-        loader: 'url-loader',
-        options: {
-            limit: 10000,
-            name: 'img/[name].[hash:7].[ext]'
-        }
-    }, {
-        test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
-        loader: 'url-loader',
-        options: {
-            limit: 10000,
-            name: 'media/[name].[hash:7].[ext]'
-        }
-    }, {
-        test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
-        loader: 'url-loader',
-        options: {
-            limit: 10000,
-            name: 'fonts/[name].[hash:7].[ext]'
-        }
-    }, {
-        test: /\.scss$/,
-        loaders: ['style', 'css', 'sass']
+        src: '~/plugins/global',
+        ssr: false
     }],
-    plugins: [new VueLoaderPlugin(), new BundleAnalyzerPlugin({
-        analyzerMode:  true ? 'static' : 'disabled',
-        defaultSizes: 'gzip'
-    })]
-}), _module$exports);
+
+    /*
+     ** Nuxt.js modules
+     */
+    modules: [
+    // Doc: https://github.com/nuxt-community/axios-module#usage
+    '@nuxtjs/axios'],
+    /*
+     ** Axios module configuration
+     */
+    axios: {
+        // See https://github.com/nuxt-community/axios-module#options
+        credentials: true
+    },
+
+    /*
+     ** Build configuration
+     */
+
+    build: {
+        /*
+         ** You can extend webpack config here
+         */
+        vendor: ['axios', '~/plugins/element-ui', '~/plugins/extra.js'],
+        extractCSS: true,
+        babel: {
+            "presets": ["env", 'vue-app']
+        },
+        // extend(config, ctx) {
+        //     // Run ESLint on save
+        //     if (ctx.isDev && ctx.isClient) {
+        //         config.module.rules.push({
+        //             enforce: 'pre',
+        //             test: /\.(js|vue)$/,
+        //             loader: 'eslint-loader',
+        //             exclude: /(node_modules)/
+        //         })
+        //     }
+        // },
+        loaders: [{
+            test: /\.vue$/,
+            loader: 'vue-loader'
+        }, {
+            test: /\.js$/,
+            exclude: /node_modules/,
+            loader: 'babel-loader'
+        }, {
+            test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+            loader: 'url-loader',
+            options: {
+                limit: 10000,
+                name: 'img/[name].[hash:7].[ext]'
+            }
+        }, {
+            test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
+            loader: 'url-loader',
+            options: {
+                limit: 10000,
+                name: 'media/[name].[hash:7].[ext]'
+            }
+        }, {
+            test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+            loader: 'url-loader',
+            options: {
+                limit: 10000,
+                name: 'fonts/[name].[hash:7].[ext]'
+            }
+        }, {
+            test: /\.scss$/,
+            loaders: ['style', 'css', 'sass']
+        }],
+        plugins: [new VueLoaderPlugin(), new BundleAnalyzerPlugin({
+            analyzerMode:  true ? 'static' : 'disabled',
+            defaultSizes: 'gzip'
+        })]
+    }
+};
 
 /***/ },
 /* 1 */

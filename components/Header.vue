@@ -1,10 +1,10 @@
 <template>
     <nav ref="nav" v-show="$store.state.showHeader">
         <ul class="nav-inner">
-            <li :class="active === 'index' ? 'active' : ''"><router-link to="/">blog</router-link></li>
+            <li :class="active === 'index' ? 'active' : ''"><nuxt-link to="/">blog</nuxt-link></li>
             <li :class="active === 'life' ? 'active' : ''"><a href="//hobby.lcddjm.com">hobby</a></li>
-            <!-- <li :class="active === 'intro' ? 'active' : ''"><router-link to="/me">about me</router-link></li> -->
-            <li :class="active === 'license' ? 'active' : ''"><router-link to="/license">license</router-link></li>            
+            <!-- <li :class="active === 'intro' ? 'active' : ''"><nuxt-link to="/me">about me</nuxt-link></li> -->
+            <li :class="active === 'license' ? 'active' : ''"><nuxt-link to="/license">license</nuxt-link></li>            
         </ul>
         <div class="right">
             <div class="search" @click="triggerSearch">
@@ -17,8 +17,8 @@
                 <User :userInfo="userInfo" ref="userInfo"></User>
             </div>
             <div class="nologin" v-else>
-                <router-link to="/signup">注册</router-link> |
-                <router-link to="/signin">登陆</router-link>                
+                <nuxt-link to="/signup">注册</nuxt-link> |
+                <nuxt-link to="/signin">登陆</nuxt-link>                
             </div>
         </div>
         <search :showSearchPage="showSearchPage" v-on:triggerSearch="triggerSearch"></search>
