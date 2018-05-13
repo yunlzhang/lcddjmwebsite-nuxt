@@ -213,7 +213,7 @@ module.exports = {
             loaders: ['style', 'css', 'sass']
         }],
         plugins: [new VueLoaderPlugin(), new BundleAnalyzerPlugin({
-            analyzerMode:  false ? 'static' : 'disabled',
+            analyzerMode:  true ? 'static' : 'disabled',
             defaultSizes: 'gzip'
         })]
     }

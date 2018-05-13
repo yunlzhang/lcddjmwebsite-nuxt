@@ -32,7 +32,7 @@ const store = () => new Vuex.Store({
         login({commit}){
             axios({
                 type:'GET',
-                url:(process.env.NODE_ENV === 'product' ? 'https://api.lcddjm.com' : 'http://localhost:8083') + '/get_user_info'
+                url:(process.env.NODE_ENV === 'production' ? 'https://api.lcddjm.com' : 'http://localhost:8083') + '/get_user_info'
             }).then(res => {
                 let data = {};
                 if(res.data.code === 200){
