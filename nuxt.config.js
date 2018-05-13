@@ -7,6 +7,7 @@ const {
 
 module.exports = {
     mode: 'universal',
+    loading:false,
     //generate
     generate: {
         routes: function () {
