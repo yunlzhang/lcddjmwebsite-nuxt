@@ -1,6 +1,6 @@
 # nuxtwbsite
 
-> Nuxt.js project
+> Nuxt.js project 个人网站 nuxt 服务器渲染版本
 
 ## Build Setup
 
@@ -25,4 +25,3 @@ using a prerelease version of Node (i.e. v7.6.0-rc.1) you will need to either:
   2. Run `yarn` with a standard release of Node and then switch back
 
 For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
-# websiteNuxt
