@@ -21,13 +21,12 @@ export default {
     },
     methods:{
         signout(){
-            this.axios({
+            this.$axios({
                 method:'get',
                 url:this.HOST + '/signout'
             })
             .then(res=>{
                 if(res.data.code === 200){
-                    localStorage.removeItem('userInfo');
                     location.reload();
                 }else{
                     this.$message({

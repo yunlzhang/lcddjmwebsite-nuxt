@@ -79,16 +79,11 @@
 			document.title = '注册';
 		},
 		beforeRouteEnter (to,from,next){
-			let userInfo = {};
-			try{
-				userInfo = JSON.parse(localStorage.getItem('userInfo'));
-			}catch(e){
-
-			}
-			if(userInfo && userInfo._id){
-				history.go(-1);
-			}
-			next();
+			next(vm => {
+				if(vm.$store.state.isLogin){
+					history.go(-1);
+				}
+        	});
 		},
         methods: {
             cropAvatar(e){

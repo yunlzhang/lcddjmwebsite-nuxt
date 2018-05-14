@@ -12,9 +12,9 @@
                     <use xlink:href="#icon-search"></use>
                 </svg>    
             </div>
-            <div class="user" v-if="false">
-                <span class="avatar" @click="showInfo"><img :src="userInfo.avatar" alt="" ></span>
-                <User :userInfo="userInfo" ref="userInfo"></User>
+            <div class="user" v-if="$store.state.isLogin">
+                <span class="avatar" @click="showInfo"><img :src="$store.state.userInfo.avatar" alt="" ></span>
+                <User :userInfo="$store.state.userInfo" ref="userInfo"></User>
             </div>
             <div class="nologin" v-else>
                 <nuxt-link to="/signup">注册</nuxt-link> |

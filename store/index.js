@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import axios from 'axios'
 
 Vue.use(Vuex)
 
@@ -30,9 +29,10 @@ const store = () => new Vuex.Store({
     },
     actions: {
         login({commit}){
-            axios({
+            console.dir(this.$axios)
+            this.$axios({
                 type:'GET',
-                url:(process.env.NODE_ENV === 'production' ? 'https://api.lcddjm.com' : 'http://localhost:8083') + '/get_user_info'
+                url:'/get_user_info'
             }).then(res => {
                 let data = {};
                 if(res.data.code === 200){

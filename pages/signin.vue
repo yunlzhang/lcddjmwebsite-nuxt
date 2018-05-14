@@ -32,25 +32,16 @@ export default {
         }
     },
     beforeRouteEnter (to,from,next){
-        let userInfo = {};
-        try{
-            userInfo = JSON.parse(localStorage.getItem('userInfo'));
-        }catch(e){
-
-        }
-        if(userInfo && userInfo._id){
-            history.go(-1);
-        }
-        next();
+        next(vm => {
+            if(vm.$store.state.isLogin){
+                history.go(-1);
+            }
+        });
     },
     mounted: function () {
         document.title = '登陆';
-        this.$nextTick(function () {
-               
-        })
-        
+      
     },
-   
     methods:{
         signin(){
             this.$axios({
@@ -60,12 +51,9 @@ export default {
             })
             .then(res => {
                 if(res.data.code === 200){
-                    this.$emit('getUserInfo');
-                    localStorage.setItem('userInfo',JSON.stringify(res.data.data));
-                    document.querySelector('#rainCanvas') && document.querySelector('body').removeChild(document.querySelector('#rainCanvas'));
+                    this.$store.dispatch('login');
                     history.length > 2 ? this.$router.go(-1) : this.$router.replace('/');
                 }else{
-                    localStorage.removeItem('userInfo');
                     this.$message({
                         message: res.data.message,
                         type: 'info'

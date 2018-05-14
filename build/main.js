@@ -153,9 +153,9 @@ module.exports = {
      */
     axios: {
         // See https://github.com/nuxt-community/axios-module#options
+        baseURL:  false ? 'http://localhost:8083' : 'https://api.lcddjm.com',
         credentials: true
     },
-
     /*
      ** Build configuration
      */
