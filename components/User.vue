@@ -23,7 +23,7 @@ export default {
         signout(){
             this.$axios({
                 method:'get',
-                url:this.HOST + '/signout'
+                url:'/signout'
             })
             .then(res=>{
                 if(res.data.code === 200){

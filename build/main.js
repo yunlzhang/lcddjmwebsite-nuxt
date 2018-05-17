@@ -72,6 +72,13 @@ module.exports =
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
+module.exports = __webpack_require__(6);
+
+
+/***/ },
+/* 1 */
+/***/ function(module, exports, __webpack_require__) {
+
 var pkg = __webpack_require__(4);
 var axios = __webpack_require__(5);
 
@@ -138,7 +145,7 @@ module.exports = {
         src: '~/plugins/cropper',
         ssr: false
     }, {
-        src: '~/plugins/global',
+        src: '~/plugins/edit',
         ssr: false
     }],
 
@@ -153,7 +160,7 @@ module.exports = {
      */
     axios: {
         // See https://github.com/nuxt-community/axios-module#options
-        baseURL:  false ? 'http://localhost:8083' : 'https://api.lcddjm.com',
+        baseURL:  true ? 'http://localhost:8083' : 'https://api.lcddjm.com',
         credentials: true
     },
     /*
@@ -165,10 +172,10 @@ module.exports = {
          ** You can extend webpack config here
          */
         vendor: ['axios', '~/plugins/element-ui', '~/plugins/extra.js'],
-        extractCSS: true,
         babel: {
             "presets": ["env", 'vue-app']
         },
+        extractCSS: true,
         // extend(config, ctx) {
         //     // Run ESLint on save
         //     if (ctx.isDev && ctx.isClient) {
@@ -213,18 +220,11 @@ module.exports = {
             loaders: ['style', 'css', 'sass']
         }],
         plugins: [new VueLoaderPlugin(), new BundleAnalyzerPlugin({
-            analyzerMode:  true ? 'static' : 'disabled',
+            analyzerMode:  false ? 'static' : 'disabled',
             defaultSizes: 'gzip'
         })]
     }
 };
-
-/***/ },
-/* 1 */
-/***/ function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(6);
-
 
 /***/ },
 /* 2 */
@@ -242,7 +242,7 @@ module.exports = require("nuxt");
 /* 4 */
 /***/ function(module, exports) {
 
-module.exports = {"name":"nuxtwbsite","version":"1.1.0","description":"Nuxt.js project","author":"yunlzhang <zhangyunlong_fdzs@163.com>","private":true,"scripts":{"dev":"backpack dev","build":"nuxt build && backpack build","start":"cross-env NODE_ENV=production node build/main.js","precommit":"npm run lint","generate":"nuxt generate","lint":"eslint --ext .js,.vue --ignore-path .gitignore ."},"dependencies":{"@nuxtjs/axios":"^5.3.1","cross-env":"^5.0.1","element-ui":"^2.3.7","koa":"^2.4.1","moment":"^2.22.1","moment-timezone":"^0.5.16","nuxt":"latest","source-map-support":"^0.4.15"},"devDependencies":{"babel-eslint":"^7.1.1","babel-preset-env":"^1.6.1","backpack-core":"^0.3.0","eslint":"^3.13.1","eslint-config-standard":"^10.2.1","eslint-loader":"^1.9.0","eslint-plugin-html":"^2.0.3","eslint-plugin-import":"^2.2.0","eslint-plugin-node":"^4.2.2","eslint-plugin-promise":"^3.4.0","eslint-plugin-standard":"^3.0.1","moment-timezone":"^0.5.16","node-sass":"^4.9.0","nodemon":"^1.11.0","sass-loader":"^7.0.1","scmp":"^2.0.0","vue-cropper":"^0.2.9","vue-loader":"^15.0.9","vue-quill-editor":"^3.0.6","vuex":"^3.0.1","webpack-bundle-analyzer":"^2.11.2"}}
+module.exports = {"name":"nuxtwbsite","version":"1.1.0","description":"Nuxt.js project","author":"yunlzhang <zhangyunlong_fdzs@163.com>","private":true,"scripts":{"dev":"backpack dev","build":"nuxt build && backpack build","start":"cross-env NODE_ENV=production node build/main.js","precommit":"npm run lint","generate":"nuxt generate","lint":"eslint --ext .js,.vue --ignore-path .gitignore ."},"dependencies":{"@nuxtjs/axios":"^5.3.1","cross-env":"^5.0.1","element-ui":"^2.3.7","koa":"^2.4.1","moment":"^2.22.1","moment-timezone":"^0.5.16","nuxt":"^1.4.0","source-map-support":"^0.4.15"},"devDependencies":{"babel-eslint":"^7.1.1","babel-preset-env":"^1.6.1","backpack-core":"^0.3.0","eslint":"^3.13.1","eslint-config-standard":"^10.2.1","eslint-loader":"^1.9.0","eslint-plugin-html":"^2.0.3","eslint-plugin-import":"^2.2.0","eslint-plugin-node":"^4.2.2","eslint-plugin-promise":"^3.4.0","eslint-plugin-standard":"^3.0.1","moment-timezone":"^0.5.16","node-sass":"^4.9.0","nodemon":"^1.11.0","sass-loader":"^7.0.1","scmp":"^2.0.0","vue-cropper":"^0.2.9","vue-loader":"^15.0.9","vue-quill-editor":"^3.0.6","vuex":"^3.0.1","webpack":"^4.8.3","webpack-bundle-analyzer":"^2.11.2","webpack-cli":"^2.1.3"}}
 
 /***/ },
 /* 5 */
@@ -274,8 +274,8 @@ module.exports = require("webpack-bundle-analyzer");
 
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Users_yunlongzhang_Desktop_nuxtwbsite_node_modules_babel_runtime_regenerator__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Users_yunlongzhang_Desktop_nuxtwbsite_node_modules_babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__Users_yunlongzhang_Desktop_nuxtwbsite_node_modules_babel_runtime_regenerator__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Users_yunlongzhang_Desktop_nuxtwbsite_node_modules_6_26_0_babel_runtime_regenerator__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Users_yunlongzhang_Desktop_nuxtwbsite_node_modules_6_26_0_babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__Users_yunlongzhang_Desktop_nuxtwbsite_node_modules_6_26_0_babel_runtime_regenerator__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_koa__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_koa___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_koa__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_nuxt__ = __webpack_require__(3);
@@ -283,11 +283,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 
 
 var start = function () {
-  var _ref = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0__Users_yunlongzhang_Desktop_nuxtwbsite_node_modules_babel_runtime_regenerator___default.a.mark(function _callee2() {
+  var _ref = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0__Users_yunlongzhang_Desktop_nuxtwbsite_node_modules_6_26_0_babel_runtime_regenerator___default.a.mark(function _callee2() {
     var _this = this;
 
     var app, host, port, config, nuxt, builder;
-    return __WEBPACK_IMPORTED_MODULE_0__Users_yunlongzhang_Desktop_nuxtwbsite_node_modules_babel_runtime_regenerator___default.a.wrap(function _callee2$(_context2) {
+    return __WEBPACK_IMPORTED_MODULE_0__Users_yunlongzhang_Desktop_nuxtwbsite_node_modules_6_26_0_babel_runtime_regenerator___default.a.wrap(function _callee2$(_context2) {
       while (1) {
         switch (_context2.prev = _context2.next) {
           case 0:
@@ -297,7 +297,7 @@ var start = function () {
 
             // Import and Set Nuxt.js options
 
-            config = __webpack_require__(0);
+            config = __webpack_require__(1);
 
             config.dev = !(app.env === 'production');
 
@@ -318,8 +318,8 @@ var start = function () {
           case 10:
 
             app.use(function () {
-              var _ref2 = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0__Users_yunlongzhang_Desktop_nuxtwbsite_node_modules_babel_runtime_regenerator___default.a.mark(function _callee(ctx, next) {
-                return __WEBPACK_IMPORTED_MODULE_0__Users_yunlongzhang_Desktop_nuxtwbsite_node_modules_babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
+              var _ref2 = _asyncToGenerator( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0__Users_yunlongzhang_Desktop_nuxtwbsite_node_modules_6_26_0_babel_runtime_regenerator___default.a.mark(function _callee(ctx, next) {
+                return __WEBPACK_IMPORTED_MODULE_0__Users_yunlongzhang_Desktop_nuxtwbsite_node_modules_6_26_0_babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
                   while (1) {
                     switch (_context.prev = _context.next) {
                       case 0:

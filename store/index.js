@@ -29,7 +29,6 @@ const store = () => new Vuex.Store({
     },
     actions: {
         login({commit}){
-            console.dir(this.$axios)
             this.$axios({
                 type:'GET',
                 url:'/get_user_info'

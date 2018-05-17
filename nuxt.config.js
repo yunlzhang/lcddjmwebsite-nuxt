@@ -72,9 +72,8 @@ module.exports = {
         {
             src:'~/plugins/cropper',
             ssr:false
-        },
-        {
-            src:'~/plugins/global',
+        },{
+            src:'~/plugins/edit',
             ssr:false
         }
     ],
@@ -103,10 +102,10 @@ module.exports = {
          ** You can extend webpack config here
          */
         vendor:['axios','~/plugins/element-ui','~/plugins/extra.js'],
-        extractCSS: true,
         babel: {
             "presets": ["env", 'vue-app']
         },
+        extractCSS:true,
         // extend(config, ctx) {
         //     // Run ESLint on save
         //     if (ctx.isDev && ctx.isClient) {
@@ -118,7 +117,8 @@ module.exports = {
         //         })
         //     }
         // },
-        loaders: [{
+        loaders: [
+            {
                 test: /\.vue$/,
                 loader: 'vue-loader'
             },
