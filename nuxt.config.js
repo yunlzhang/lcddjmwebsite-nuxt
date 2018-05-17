@@ -162,10 +162,7 @@ module.exports = {
         ],
         plugins: [
             new VueLoaderPlugin(),
-            new BundleAnalyzerPlugin({
-                analyzerMode: process.env.NODE_ENV === 'production' ? 'static' : 'disabled',
-                defaultSizes: 'gzip'
-            }),
+            new BundleAnalyzerPlugin()
         ]
     }
 }
