@@ -81,7 +81,7 @@
                         page,
                         num
                     },
-                    url: this.HOST + '/search'
+                    url:'/search'
                 })
                 .then(res => {
                     if (res.data.code == 200) {

@@ -70,6 +70,10 @@ module.exports = {
             ssr:false
         },
         {
+            src:'~/plugins/global',
+            ssr:false
+        },
+        {
             src:'~/plugins/cropper',
             ssr:false
         },{

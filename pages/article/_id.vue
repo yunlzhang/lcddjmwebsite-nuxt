@@ -137,7 +137,7 @@ export default {
                 params:{
                     _id:id
                 },
-                url:this.HOST + '/article/get_article_detail'
+                url:'/article/get_article_detail'
             }).then(res => {
                 if(res.data.code == 200){
                     let comments = res.data.data[1].comments
@@ -187,7 +187,7 @@ export default {
             this.$axios({
                 method:'post',
                 data:data,
-                url:this.HOST + '/comment'
+                url:'/comment'
             }).then(res => {
                 let comments = this.comments;
                 if(res.data.code == 200){
@@ -226,7 +226,7 @@ export default {
                     article_id:this.$route.params.id,
                     page:page
                 },
-                url:this.HOST + '/comment/get_more_comments'
+                url:'/comment/get_more_comments'
             })
             .then(res => {
                 if(res.data.code == 200){
@@ -257,7 +257,7 @@ export default {
                     last_id:last_id,
                     count:last
                 },
-                url:this.HOST + '/comment/get_more_sub_comments'
+                url:'/comment/get_more_sub_comments'
             })
             .then(res => {
                 if(res.data.code == 200){

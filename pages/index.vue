@@ -91,7 +91,7 @@
                 this.$axios({
                     method: 'get',
                     params: data,
-                    url: this.HOST + '/article/get_index_data'
+                    url: '/article/get_index_data'
                 }).then(res => {
                     if (res.data.code == 200) {
                         this.articleLength = res.data.article_length;
@@ -109,7 +109,7 @@
                 this.$axios({
                     method: 'get',
                     params: data,
-                    url: this.HOST + '/article/get_article'
+                    url:'/article/get_article'
                 }).then(res => {
                     if (res.data.code == 200) {
                         this.article = res.data.data;
