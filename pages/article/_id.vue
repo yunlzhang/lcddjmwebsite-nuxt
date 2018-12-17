@@ -300,6 +300,10 @@ export default {
         max-width:800px;
         width: 100%;
         margin:0 auto;
+        padding:0 50px;
+        margin-top:80px;
+        border-radius:10px;
+        background:#fff;
         overflow:hidden;
         .title{
             font-size:30px;

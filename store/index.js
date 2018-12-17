@@ -7,7 +7,7 @@ const store = () => new Vuex.Store({
     state: {
         userInfo: {},
         isLogin:false,
-        showHeader:false,
+        showHeader:true,
         activeClass:''
     },
     mutations:{

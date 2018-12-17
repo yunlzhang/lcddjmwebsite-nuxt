@@ -105,6 +105,9 @@
                     color:#0db4f9;
                 }
             }
+            a{
+                color:#fff;
+            }
         }
         .right{
             float:right;
@@ -137,10 +140,11 @@
                 overflow:hidden;
                 cursor:pointer;
             }
+            a{
+                color:#fff;
+            }
         }
-        a{
-            color:#fff;
-        }
+        
         .packbtn{
             width:40px;
             height:40px;

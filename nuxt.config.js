@@ -41,7 +41,18 @@ module.exports = {
             rel: 'icon',
             type: 'image/x-icon',
             href: '/favicon.ico'
-        }]
+        }],
+        script: [
+            {innerHTML:`
+                var _hmt = _hmt || [];(function() {
+                    var hm = document.createElement("script");
+                    hm.src = "https://hm.baidu.com/hm.js?cf435e5fb8fd03c784b3f900966b8435";
+                    var s = document.getElementsByTagName("script")[0]; 
+                    s.parentNode.insertBefore(hm, s);
+                })();
+            `}
+        ],
+        __dangerouslyDisableSanitizers: ['script'],
     },
 
     /*

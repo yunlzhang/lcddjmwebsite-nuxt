@@ -35,7 +35,7 @@
                     </router-link>
                 </li>
             </ul>
-            <el-pagination background layout="prev, pager, next" :page-size="5" :total="articleLength" @current-change="pageChange">
+            <el-pagination background layout="prev, pager, next" :current-page="active" :page-size="5" :total="articleLength" @current-change="pageChange">
             </el-pagination>
         </div>
     </div>
@@ -44,12 +44,14 @@
 <script>
     export default {
         async asyncData({
-            app
+            app,
+            req,
+            query
         }) {
             let res = await app.$axios({
                 method: 'get',
                 params: {
-                    page: 1,
+                    page: query.page || 1,
                     num: 5
                 },
                 url: (process.env.NODE_ENV === 'development' ? 'http://localhost:8083' :
@@ -59,6 +61,7 @@
                 return {
                     articleLength: res.data.article_length,
                     article: res.data.article_data,
+                    active:Number(query.page) || 1,
                 }
             } else {
                 return {}
@@ -80,6 +83,7 @@
             return {
                 article: [],
                 articleLength: 0,
+                active:1,
                 loading: true
             }
         },
@@ -122,11 +126,7 @@
                 })
             },
             pageChange(page) {
-                this.article = [];
-                this.getArticle({
-                    page: page,
-                    num: 5
-                });
+                location.href = location.href.split('?')[0] + `?page=${page}`;
             },
             particle() {
                 

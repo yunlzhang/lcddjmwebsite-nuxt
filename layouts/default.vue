@@ -21,19 +21,17 @@
                 }
             }
         },
-        beforeCreate(){
-        },
 		mounted(){
             this.dealHeader(this.$route.name)            
 			this.$store.dispatch('login');
         },
         methods:{
             dealHeader(name){
-                if(~['index','license','signin','signup'].indexOf(name)){
-                    this.$store.commit('changeHeader',true);     
-                }else{
-                    this.$store.commit('changeHeader',false);
-                }
+                // if(~['index','license','signin','signup'].indexOf(name)){
+                //     this.$store.commit('changeHeader',true);     
+                // }else{
+                //     this.$store.commit('changeHeader',false);
+                // }
                 switch(name){
                     case 'index' :
                     case 'license' :
