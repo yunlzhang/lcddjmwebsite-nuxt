@@ -72,7 +72,6 @@
         z-index: 1000;
         transform: translateX(-50%);
         background:#33373d;
-        color:#fff;
         .logo{
             float:left;
             padding:0 40px 0 0;
@@ -94,6 +93,7 @@
         }
         .nav-inner{
             float:left;
+            color:#fff;
             li{
                 float:left;
                 width:100px;
