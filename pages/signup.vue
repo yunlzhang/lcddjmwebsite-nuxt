@@ -77,6 +77,10 @@
 		},
 		mounted: function () {
 			document.title = '注册';
+			document.querySelector('nav').style.backgroundColor = 'transparent';
+		},
+		destroyed(){
+			document.querySelector('nav').style.backgroundColor = '#33373d';
 		},
 		beforeRouteEnter (to,from,next){
 			next(vm => {

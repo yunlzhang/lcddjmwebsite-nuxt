@@ -1,5 +1,6 @@
 <template>
     <nav ref="nav" v-show="$store.state.showHeader">
+        <div class="logo">lcddjm</div>
         <ul class="nav-inner">
             <li :class="active === 'index' ? 'active' : ''"><nuxt-link to="/">blog</nuxt-link></li>
             <li :class="active === 'life' ? 'active' : ''"><a href="//hobby.lcddjm.com">hobby</a></li>
@@ -68,10 +69,31 @@
         position: fixed;
         top: 0;
         left: 50%;
-        // background: #faf7ef;
         z-index: 1000;
         transform: translateX(-50%);
+        background:#33373d;
+        color:#fff;
+        .logo{
+            float:left;
+            padding:0 40px 0 0;
+            font-size:30px;
+            color:#fff;
+            position: relative;
+            &::after{
+                content:'';
+                display: block;
+                width: 0;
+                height: 0;
+                height:30px;
+                border-right:1px solid #fff;
+                position: absolute;
+                top: 50%;
+                right: 0;
+                margin-top:-15px;
+            }
+        }
         .nav-inner{
+            float:left;
             li{
                 float:left;
                 width:100px;
@@ -82,10 +104,6 @@
                 &.active a{
                     color:#0db4f9;
                 }
-            }
-            
-            a{
-                
             }
         }
         .right{
@@ -119,6 +137,9 @@
                 overflow:hidden;
                 cursor:pointer;
             }
+        }
+        a{
+            color:#fff;
         }
         .packbtn{
             width:40px;

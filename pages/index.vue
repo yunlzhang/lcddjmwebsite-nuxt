@@ -163,7 +163,8 @@
         }
         .article-item {
             padding: 15px;
-            border: 1px solid #ccc;
+            background:#fff;
+            // border: 1px solid #ccc;
             border-radius: 5px;
             margin: 20px 0;
             &:hover {

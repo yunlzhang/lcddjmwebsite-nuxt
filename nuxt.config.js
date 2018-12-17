@@ -162,7 +162,7 @@ module.exports = {
         ],
         plugins: [
             new VueLoaderPlugin(),
-            new BundleAnalyzerPlugin()
+            // new BundleAnalyzerPlugin()
         ]
     }
 }

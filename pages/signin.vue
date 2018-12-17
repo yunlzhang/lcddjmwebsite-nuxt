@@ -40,7 +40,10 @@ export default {
     },
     mounted: function () {
         document.title = '登陆';
-      
+        document.querySelector('nav').style.backgroundColor = 'transparent';
+    },
+    destroyed(){
+        document.querySelector('nav').style.backgroundColor = '#33373d';
     },
     methods:{
         signin(){
