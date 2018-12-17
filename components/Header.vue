@@ -119,6 +119,7 @@
                 cursor:pointer;
                 padding-right:80px;
                 position: relative;
+                color:#fff;
                 &::after{
                     content:'';
                     display: block;
