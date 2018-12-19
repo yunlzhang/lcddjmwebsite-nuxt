@@ -1,9 +1,22 @@
 const pkg = require('./package')
 const axios = require('axios')
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
+const {accessKey,secretKey} = require('./config/index');
+
 const {
     VueLoaderPlugin
 } = require('vue-loader')
+const QiniuPlugin = require('qn-webpack');
+ 
+// 配置 Plugin
+const qiniuPlugin = new QiniuPlugin({
+    accessKey,
+    secretKey,
+    bucket: 'dist',
+    path: 'dist'
+});
+
+
 
 module.exports = {
     mode: 'universal',
@@ -120,6 +133,7 @@ module.exports = {
         babel: {
             "presets": ["env", 'vue-app']
         },
+        publicPath: 'https://static.lcddjm.com/dist',
         extractCSS:true,
         // extend(config, ctx) {
         //     // Run ESLint on save
@@ -173,7 +187,8 @@ module.exports = {
         ],
         plugins: [
             new VueLoaderPlugin(),
-            // new BundleAnalyzerPlugin()
+            qiniuPlugin,
+            new BundleAnalyzerPlugin()
         ]
     }
 }

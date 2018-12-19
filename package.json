@@ -20,10 +20,12 @@
     "moment": "^2.22.1",
     "moment-timezone": "^0.5.16",
     "nuxt": "^1.4.0",
+    "qn-webpack": "^2.0.2",
     "source-map-support": "^0.4.15"
   },
   "devDependencies": {
     "babel-eslint": "^7.1.1",
+    "babel-plugin-component": "^1.1.1",
     "babel-preset-env": "^1.6.1",
     "backpack-core": "^0.3.0",
     "eslint": "^3.13.1",
