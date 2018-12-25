@@ -187,8 +187,8 @@ module.exports = {
         ],
         plugins: [
             new VueLoaderPlugin(),
-            qiniuPlugin,
-            new BundleAnalyzerPlugin()
+            // qiniuPlugin,
+            // new BundleAnalyzerPlugin()
         ]
     }
 }

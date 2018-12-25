@@ -54,8 +54,7 @@
                     page: query.page || 1,
                     num: 5
                 },
-                url: (process.env.NODE_ENV === 'development' ? 'http://localhost:8083' :
-                    'https://api.lcddjm.com') + '/article/get_index_data'
+                url: '/article/get_index_data'
             })
             if (res.data.code == 200) {
                 return {

@@ -71,7 +71,7 @@ export default {
             params:{
                 _id:app.params.id
             },
-            url:(process.env.NODE_ENV === 'production' ? 'https://api.lcddjm.com' : 'http://localhost:8083')  +  '/article/get_article_detail'
+            url:'/article/get_article_detail'
         })
         if(res.data.code == 200 && app.params.id){
             console.log(process.env.NODE_ENV);
